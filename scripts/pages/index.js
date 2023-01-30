@@ -17,7 +17,11 @@
         photographers.forEach((photographer) => {
 
             const photographerModel = photographerFactory(photographer);
+
+              // On récupère la carte d'un photographe qui correspond à ses éléments HTML
             const userCardDOM = photographerModel.getUserCardDOM();
+            
+              // Puis on l'ajoute à la section des photographes
             photographersSection.appendChild(userCardDOM);
         });
     };

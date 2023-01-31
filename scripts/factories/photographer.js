@@ -1,3 +1,5 @@
+// Fonction qui vas afficher les données de chaque photographe
+
 function photographerFactory(data) {
     const { name, id, city, country, tagline , price , portrait } = data;
     

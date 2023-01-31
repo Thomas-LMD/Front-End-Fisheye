@@ -10,30 +10,68 @@
     <title>Fisheye - photographe </title>
   </head>
   <body>
-    <header>
+    <header aria-hidden="false" role="banner" class="header">
       <a role="link" href="index.html">
-      <img src="assets/images/logo.png" class="logo" />
+          <img class="logo" alt="Page d'accueil FishEye" src="assets/images/logo.png"/>
+      </a>
     </header>
-    <main id="main">
+    <main aria-hidden="false" role="main" class="main">
       <div class="photograph-header">
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
       </div>
+      <div class="photograph-media">
+        <div class="mediaSorting">
+            <label for="mediaSorting">Trier par
+                <select name="mediaSorting" id="mediaSorting">
+                    <option value="date" selected>Date</option>
+                    <option value="popularity">Popularité</option>
+                    <option value="title">Titre</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="list-media">
+
+        </div>
+    </div>
+
+
     </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
+    <!-- formulaire modal  -->
+    <div aria-describedby="modalTitle" role="dialog" aria-hidden="true" id="contact_modal">
+      <div class="modal">
+          <header role="banner">
+              <div class="title">
+                  <h1 id="modalTitle" class="name">Contactez-moi </h1>
+              </div>
+            <img aria-label="Fermer la boîte de dialogue" role="button" src="assets/icons/close.svg" onclick="closeModal()"  alt="close.svg"/>
+          </header>
+          <form role="form">
+              <div class="formData">
+                  <label for="first-name">Prénom</label>
+                  <input type="text" id="first-name" class="text-control"/>
+              </div>
+
+              <div class="formData">
+                  <label for="last-name">Nom</label>
+                  <input type="text" id="last-name" class="text-control"/>
+              </div>
+
+              <div class="formData">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" class="text-control"/>
+              </div>
+
+              <div class="formData">
+                  <label for="message">Votre message</label>
+                  <textarea id="message" class="text-control"></textarea>
+              </div>
+
+              <button role="button" type="submit" id="submit" class="contact_button" onclick="return validate()">Envoyer</button>
+          </form>
+      </div>
+  </div>
+ 
     <script src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>
